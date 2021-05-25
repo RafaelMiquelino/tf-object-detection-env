@@ -16,5 +16,8 @@ RUN git clone --depth 1 https://github.com/tensorflow/models && \
     cp object_detection/packages/tf2/setup.py . && \
     python -m pip install .
 COPY ./notebook /bin/notebook
-RUN chmod a+x /bin/notebook
+COPY ./train_model /bin/train_model
+RUN chmod a+x /bin/notebook && \
+    chmod a+x /bin/train_model
+ENV OB_API_DIR=/tmp/models
 WORKDIR /content
