@@ -1,0 +1,6 @@
+#!/bin/bash
+python $OB_API_DIR/research/object_detection/model_main_tf2.py \
+  --pipeline_config_path=$MODEL_DIR/pipeline.config \
+  --model_dir=$MODEL_DIR/logs \
+  --checkpoint_dir=$MODEL_DIR/logs \
+  --alsologtostderr

@@ -17,7 +17,9 @@ RUN git clone --depth 1 https://github.com/tensorflow/models && \
     python -m pip install .
 COPY ./notebook /bin/notebook
 COPY ./train_model /bin/train_model
+COPY ./eval_model /bin/eval_model
 RUN chmod a+x /bin/notebook && \
-    chmod a+x /bin/train_model
+    chmod a+x /bin/train_model && \
+    chmod a+x /bin/eval_model
 ENV OB_API_DIR=/tmp/models
 WORKDIR /content
